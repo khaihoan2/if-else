@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="year">
+<button onclick="checkLeafYear()">Check Leaf Year</button>
+<p id="show_year"></p>
+
+<script>
+    function checkLeafYear(){
+        let year = document.getElementById('year').value
+        console.log('year =',year)
+        let isCheckLeafYear = false
+        if (year%4==0 && year%100!=0 || year%400==0){
+            isCheckLeafYear = true
+        }else{
+            isCheckLeafYear = false
+        }
+        isCheckLeafYear ? document.getElementById('show_year').innerHTML='Is Leaf Year':document.getElementById('show_year').innerHTML="IS NOT LEAF YEAR"
+    }
+</script>
+</body>
+</html>

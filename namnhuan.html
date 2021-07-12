@@ -5,13 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+<input id="name">
+<button onclick="nam()">Click vào!</button>
+<p id="gio"></p>
+<!--<script>-->
+<!--  let a = parseInt(prompt("ghi số năm"));-->
+<!--   if (a%4==0 && a%100 !=0 || a%400 == 0){-->
+<!--     alert(a + "Đây là năm nhuần")-->
+<!--   }else {-->
+<!--     alert(a + "Đây không phải là năm nhuần")-->
+<!--   }-->
+<!--</script>-->
 <script>
-  let a = parseInt(prompt("ghi số năm"));
-   if (a%4==0 && a%100 !=0 || a%400 == 0){
-     alert(a + "Đây là năm nhuần")
-   }else {
-     alert(a + "Đây không phải là năm nhuần")
-   }
+
+    function nam(){
+        let a = document.getElementById('name').value
+        console.log('a = ',a)
+        let b = false
+        if (a%4==0 && a%100!=0 || a%400==0){
+            b = true
+        }else {
+           b = false
+        }
+        b ? document.getElementById('gio').innerHTML="nam nhuan":document.getElementById("gio").innerHTML="khong nhuan"
+
+    }
 </script>
 </body>
 </html>
