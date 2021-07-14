@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<form action="" style="background-color: black;padding: 5px; float: left">
+  <table style="background-color: white">
+    <tr>
+      <td colspan="4">
+        <input type="text" id="result">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" onclick="inputValue('1')">1</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('2')">2</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('3')">3</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('+')">+</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" onclick="inputValue('4')">4</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('5')">5</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('6')">6</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('-')">-</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" onclick="inputValue('7')">7</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('8')">8</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('9')">9</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('*')">*</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button type="button" onclick="inputValue('c')">C</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('0')">0</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('=')">=</button>
+      </td>
+      <td>
+        <button type="button" onclick="inputValue('/')">/</button>
+      </td>
+    </tr>
+  </table>
+  <script>
+    let flag = false; // Kỹ thuật đặt cờ
+    function inputValue(value) {
+      if (value == '=') {
+        flag = true;
+        if (document.getElementById('result').value != "") {
+          document.getElementById('result').value = eval(document.getElementById('result').value);
+          flag = false;
+        }else {
+          alert("Nhập giá trị")
+        }
+      } else if (value == 'c') {
+        document.getElementById('result').value = "";
+      }else{
+        if(flag == true){
+          document.getElementById('result').value = "";
+        }else{
+          document.getElementById("result").value += value;
+        }
+      }
+    }
+  </script>
+</form>
+</body>
+</html>
